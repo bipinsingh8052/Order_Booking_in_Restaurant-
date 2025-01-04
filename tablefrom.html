@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="./tableform.css">
+</head>
+<body>
+    <!-- <div>
+
+        <h1>Book Your Table</h1>
+        <div>
+            <label for="date">Pick Your Date</label>
+            <br>
+            <input type="date" id="date">
+            <br>
+
+            <label for="time">Pick Your Time</label><br>
+            <input type="time" id="time">
+            <br>
+
+            <label for="gueste">Number Of Guests</label><br>
+            <input type="number" id="guests">
+            <br>
+
+            <label for="tablenumber">Chosse Table</label><br>
+            <input type="number" id="tablenumber">
+            <br>
+
+            <label for="requestbox">Special Request</label><br>
+            <textarea type="text" name="" id="requestbox" placeholder="Message"><br>
+
+            <button id="bookbtn">Book Now</button>
+
+        </div>
+    </div> -->
+
+    <div class="booking-container">
+        <button class="close-btn" id="close-form-btn">&times;</button>
+        <h1>Book Your Table</h1>
+        
+        <form action="./payment.html" id="booking-form">
+            <!-- Date Picker -->
+            <div class="form-group">
+                <label for="date">Pick Your Date</label>
+                <input type="date" id="date" required>
+            </div>
+    
+            <!-- Time Picker -->
+            <div class="form-group">
+                <label for="time">Pick Your Time</label>
+                <input type="time" id="time" required>
+            </div>
+    
+            <!-- Number of Guests -->
+            <div class="form-group">
+                <label for="guests">Number of Guests</label>
+                <input type="number" id="guests" min="1" max="8" placeholder="Enter guests (1-8)" required>
+            </div>
+    
+            <!-- Table Number -->
+            <div class="form-group">
+                <label for="tablenumber">Choose Table</label>
+                <input type="number" id="tablenumber" min="1" placeholder="Enter table number" required>
+            </div>
+    
+            <!-- Special Request -->
+            <div class="form-group">
+                <label for="requestbox">Special Request</label>
+                <textarea id="requestbox" rows="4" placeholder="Any special requests..."></textarea>
+            </div>
+    
+            <!-- Submit Button -->
+            <button id="bookbtn" type="submit">Book Now</button>
+        </form>
+    </div>
+    <script>
+        // JSON Data for Tables
+        const tables = [
+            { tableNumber: 1, capacity: 2, isAvailable: true },
+            { tableNumber: 2, capacity: 4, isAvailable: false },
+            { tableNumber: 3, capacity: 6, isAvailable: true },
+            { tableNumber: 4, capacity: 4, isAvailable: true },
+            { tableNumber: 5, capacity: 8, isAvailable: false }
+        ];
+    
+        // Function to handle booking
+        document.getElementById("booking-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+    
+            const tableNumber = parseInt(document.getElementById("tablenumber").value);
+            const guests = parseInt(document.getElementById("guests").value);
+    
+            // Find the table based on user input
+            const table = tables.find(t => t.tableNumber === tableNumber);
+    
+            if (!table) {
+                alert(`Table ${tableNumber} does not exist.`);
+                return;
+            }
+    
+            if (!table.isAvailable) {
+                alert(`Table ${tableNumber} is currently unavailable.`);
+                return;
+            }
+    
+            if (guests > table.capacity) {
+                alert(
+                    `Table ${tableNumber} can only accommodate up to ${table.capacity} guests.`
+                );
+                return;
+            }
+    
+            // Booking success
+            alert(
+                `Table ${tableNumber} is booked successfully for ${guests} guests!`
+            );
+    
+            // Mark table as unavailable
+            table.isAvailable = false;
+    
+            // Log updated tables (for debugging)
+            console.log(tables);
+        });
+        document.getElementById("close-form-btn").addEventListener("click", function () {
+            event.preventDefault();
+    window.location.href = "./index.html"
+});
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Table Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./contact.css">
+    
+</head>
+<body onload="prefunction()">
+    <div id="preloader" >
+        <h1>Welcome</h1>
+    </div>
+    <div id="main">
+        <!-- ----------------Navbar-------------------- -->
+        <div id="navbar">
+            <article>
+                BookMytable
+            </article>
+
+            <article>
+                <div><a href="#">Home</a></div>
+                <div><a href="./menu.html">Menu</a></div>
+                <div><a href="#description">About-us</a></div>
+                <div><a href="./tablefrom.html">Reservation</a></div>
+                <div><a href="#contact">Contact</a></div>
+            </article>
+            
+            <article>
+                <div><i class="fa-regular fa-user"></i></div>
+                <div>sign-in</div>
+            </article>
+        </div>
+
+        <!-- -------------Floating button--------------- -->
+        <div id="callbtn">
+            
+                <i class="fa-solid fa-phone"></i>
+    
+        </div>
+
+
+
+        <!-- I work on this Element -->
+
+        <div class="booking-container">
+            <button class="close-btn" id="close-form-btn" onclick="disclose()">&times;</button>
+            <h1>Book Your Table</h1>
+            <form id="booking-form">
+                <!-- Date Picker -->
+                <div class="form-group">
+                    <label for="date">Pick Your Date</label>
+                    <input type="date" id="date" required>
+                </div>
+        
+                <!-- Time Picker -->
+                <div class="form-group">
+                    <label for="time">Pick Your Time</label>
+                    <input type="time" id="time" required>
+                </div>
+        
+                <!-- Number of Guests -->
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" min="1" max="8" placeholder="Enter guests (1-8)" required>
+                </div>
+        
+                <!-- Table Number -->
+                <div class="form-group">
+                    <label for="tablenumber">Choose Table</label>
+                    <input type="text" id="tablenumber" min="1" placeholder="Enter table number" required>
+                </div>
+        
+                <!-- Special Request -->
+                <div class="form-group">
+                    <label for="requestbox">Special Request</label>
+                    <textarea id="requestbox" rows="4" placeholder="Any special requests..."></textarea>
+                </div>
+        
+                <!-- Submit Button -->
+                <button id="bookbtn" type="submit" onclick=" return book_table()">Book Now</button>
+            </form>
+        </div>
+
+        <!-- I work on this element -->
+
+        <!-- ---------------Hero Section------------------ -->
+        <div id="hero">
+            <div>
+                <div class="hero-slider">
+                    <div class="slides">
+                        <img src="./kimi-albertso.jpg" alt="Delicious Food 1">
+                        <img src="./jason-leung.jpg" alt="Delicious Food 2">
+                        <img src="./brooke-lark.jpg" alt="Delicious Food 3">
+                    </div>
+                </div>
+                
+                <div id="btndiv">
+                    <p>Experience exquisite dining with us. Reserve your table now and indulge in culinary delights.</p>
+
+                    <button class="button">
+
+  
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round"        stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+                     </svg>
+
+  
+                    <div class="text">
+                        Book Now
+                    </div>
+
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ----------------description of reaturant------------ -->
+        <section id="description">
+            <div class="description-content">
+                <h2>Welcome to Food and Roof</h2>
+                <p>At <strong>Food and Roof</strong>, we believe in providing an unforgettable dining experience that celebrates the richness of Indian cuisine. Whether you're here for a special occasion or a casual meal, we offer a range of delectable dishes that are made with the freshest ingredients, expertly crafted by our world-class chefs.</p>
+        
+                <h3>Delicious Indian Cuisine</h3>
+                <p>Our menu is a celebration of India's diverse culinary heritage, offering a wide range of starters, main courses, desserts, and beverages. From the creamy richness of Butter Chicken to the tangy flavors of Chole Bhature, every dish is a masterpiece crafted with passion and precision.</p>
+        
+                <h3>Online Table Booking</h3>
+                <p>Reserve your table from the comfort of your home with our easy-to-use online booking system. Whether you're planning a romantic dinner, a family gathering, or a corporate event, we ensure that every detail is taken care of for you to enjoy a hassle-free experience.</p>
+        
+                <h3>World-Class Chefs</h3>
+                <p>Our team of world-class chefs brings years of expertise and innovation to every dish. Trained in the finest kitchens and passionate about the art of cooking, they create dishes that delight both the eyes and the taste buds. At <strong>Food and Roof</strong>, you can be sure that you're enjoying the best of both traditional and contemporary Indian flavors.</p>
+                
+                <div class="cta-button">
+                    <a href="/book-table" class="button">Book Your Table Now</a>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- ---------------Special offers------------------------- -->
+        <section id="contact">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@bookmytable.com">info@bookmytable.com</a></p>
+                <p><strong>Address:</strong> 1234 Restaurant St, City, Country</p>
+                <p><strong>Follow Us:</strong> 
+                    <a href="https://facebook.com/restaurant">Facebook</a> | 
+                    <a href="https://instagram.com/restaurant">Instagram</a>
+                </p>
+            </div>
+        
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="/submit-form" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+        
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        
+        </section>
+
+
+        <!-- ----------footer----------- -->
+        <footer>
+            <div class="footer-container">
+                <!-- Logo and About Section -->
+                <div class="footer-section about">
+                    <img src="logo.png" alt="Restaurant Logo" class="footer-logo">
+                    <p>Experience exquisite dining with us. Reserve your table now and indulge in culinary delights.</p>
+                </div>
+        
+                <!-- Quick Links -->
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#reservation">Book a Table</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Contact Information -->
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Foodie Lane, Gourmet City</p>
+                    <p><i class="fas fa-phone-alt"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope"></i> reservations@restaurant.com</p>
+                </div>
+        
+                <!-- Opening Hours -->
+                <div class="footer-section hours">
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 11:00 AM - 10:00 PM</p>
+                    <p>Saturday - Sunday: 9:00 AM - 11:00 PM</p>
+                </div>
+            </div>
+        
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Gourmet Restaurant | All Rights Reserved</p>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
+        
+    </div>
+    
+    <script>
+        const slides = document.querySelector(".slides");
+        const slideImages = document.querySelectorAll(".slides img");
+
+        let currentIndex = 0;
+        const totalSlides = slideImages.length;
+
+    function showNextSlide() {
+        currentIndex++;
+        if (currentIndex >= totalSlides) {
+            currentIndex = 0;
+        }
+        const offset = currentIndex * -20; // Shift left by 100% per slide
+        slides.style.transform = `translateX(${offset}%)`;
+    }
+
+// Slide every 3 seconds
+    setInterval(showNextSlide, 3000);
+
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

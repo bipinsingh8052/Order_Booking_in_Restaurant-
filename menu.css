@@ -1,0 +1,73 @@
+/* Menu Section */
+#menu {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+#menu h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Menu Category */
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Menu Item Styling */
+.menu-item {
+    display: inline-block;
+    width: 280px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.menu-item h4 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 15px;
+}
+
+.menu-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .menu-item img {
+        height: 180px;
+    }
+
+    .menu-category h3 {
+        font-size: 1.6rem;
+    }
+}
